@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Academic homepage of Ruofei Wang, a software engineering undergraduate at Zhengzhou University.">
+  <title>Ruofei Wang | Zhengzhou University</title>
+  <style>
+    :root {
+      --ink: #182824;
+      --body: #45534d;
+      --muted: #68746d;
+      --line: #dfe5dd;
+      --paper: #fafbf7;
+      --green: #245b48;
+      --light-green: #e6eee7;
+      --accent: #ce794c;
+      --serif: Georgia, "Times New Roman", "Songti SC", SimSun, serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(1120px, calc(100% - 72px)); margin: 0 auto; }
+    .site-header { border-bottom: 1px solid var(--line); }
+    .header-inner { display: flex; min-height: 80px; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-size: .89rem; font-weight: 700; letter-spacing: .01em; white-space: nowrap; }
+    .brand-mark { display: grid; width: 30px; height: 30px; place-items: center; color: #fff; background: var(--green); border-radius: 50%; font: 600 .65rem var(--sans); letter-spacing: .02em; }
+    .nav { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 30px; }
+    .nav a { color: #52615a; font-size: .82rem; font-weight: 600; text-decoration: none; }
+    .nav a:hover { color: var(--green); }
+    .nav .nav-contact { padding: 10px 15px; border: 1px solid #becdc1; border-radius: 3px; color: var(--green); }
+    main { overflow: hidden; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 70px; align-items: center; padding-top: 86px; padding-bottom: 94px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 24px; color: var(--green); font-size: .72rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow::before { display: block; width: 27px; height: 2px; background: var(--accent); content: ""; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 12px; font: 400 clamp(3.2rem, 6.2vw, 5.75rem)/.99 var(--serif); letter-spacing: -.055em; }
+    .chinese-name { margin: 0 0 30px; color: #7d8880; font-size: 1.1rem; letter-spacing: .12em; }
+    .hero-intro { max-width: 625px; margin-bottom: 19px; color: #303f39; font-size: 1.15rem; line-height: 1.65; }
+    .hero-intro strong { color: var(--ink); font-weight: 650; }
+    .hero-detail { max-width: 620px; margin: 0; color: var(--body); font-size: .99rem; line-height: 1.85; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; padding: 0 17px; border: 1px solid var(--green); border-radius: 3px; font-size: .81rem; font-weight: 700; text-decoration: none; transition: background .18s, color .18s; }
+    .button-primary { color: #fff; background: var(--green); }
+    .button-primary:hover { background: #193f32; }
+    .button-outline { color: var(--green); border-color: #c4d2c7; background: transparent; }
+    .button-outline:hover { background: var(--light-green); }
+    .arrow { font-size: 1.1rem; line-height: 1; }
+    .identity-card { position: relative; min-height: 340px; overflow: hidden; padding: 27px; color: #ebf2e8; background: #244d3e; }
+    .identity-card::before { position: absolute; top: -124px; right: -135px; width: 345px; height: 345px; border: 1px solid rgba(221, 236, 218, .26); border-radius: 50%; box-shadow: 0 0 0 34px rgba(221,236,218,.035), 0 0 0 68px rgba(221,236,218,.035), 0 0 0 102px rgba(221,236,218,.025); content: ""; }
+    .identity-card::after { position: absolute; left: 27px; right: 27px; bottom: 100px; height: 1px; background: rgba(238, 246, 235, .24); content: ""; }
+    .card-top { position: relative; display: flex; justify-content: space-between; gap: 12px; color: #c7dacb; font-size: .63rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .card-monogram { position: relative; margin-top: 51px; color: #e9f0e4; font: 400 5.5rem/.9 var(--serif); letter-spacing: -.1em; }
+    .card-bottom { position: absolute; right: 27px; bottom: 29px; left: 27px; display: flex; align-items: end; justify-content: space-between; gap: 16px; }
+    .card-bottom strong { display: block; margin-bottom: 5px; font-size: .82rem; font-weight: 650; }
+    .card-bottom span { color: #c5d6c7; font-size: .71rem; }
+    .card-cross { font: 300 1.4rem var(--serif); color: #d29972; }
+    .section { border-top: 1px solid var(--line); padding-top: 62px; padding-bottom: 67px; }
+    .section-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 56px; }
+    .section-label { margin-bottom: 12px; color: #aa6849; font-size: .68rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+    h2 { margin-bottom: 13px; font: 400 2.1rem/1.15 var(--serif); letter-spacing: -.035em; }
+    .section-subtitle { max-width: 170px; margin: 0; color: var(--muted); font-size: .83rem; line-height: 1.65; }
+    .award-list { margin: -10px 0 0; padding: 0; list-style: none; }
+    .award { display: grid; grid-template-columns: 60px 1fr auto; gap: 20px; align-items: start; padding: 19px 0; border-bottom: 1px solid var(--line); }
+    .award:first-child { padding-top: 10px; }
+    .award:last-child { border-bottom: 0; padding-bottom: 0; }
+    .award-year { padding-top: 3px; color: var(--muted); font-size: .78rem; font-weight: 650; }
+    .award-name { display: block; margin-bottom: 5px; font-size: .94rem; font-weight: 700; line-height: 1.45; }
+    .award-desc { display: block; color: var(--muted); font-size: .82rem; line-height: 1.6; }
+    .award-prize { white-space: nowrap; color: var(--green); font-size: .76rem; font-weight: 750; line-height: 1.7; }
+    .education { display: grid; grid-template-columns: 1fr auto; gap: 16px; }
+    .education h3 { margin-bottom: 7px; font-size: 1rem; line-height: 1.5; }
+    .education p { margin: 0 0 5px; color: var(--body); font-size: .88rem; line-height: 1.65; }
+    .education-year { color: var(--muted); font-size: .78rem; font-weight: 650; white-space: nowrap; }
+    .contact-band { color: #e7f0e6; background: #1c3d31; }
+    .contact-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; padding-top: 43px; padding-bottom: 43px; }
+    .contact-label { color: #afcbb6; margin-bottom: 9px; font-size: .67rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+    .contact-inner h2 { margin: 0; font-size: 1.75rem; }
+    .contact-email { color: #fff; font-size: .97rem; font-weight: 650; text-decoration-color: #a8c9af; text-underline-offset: 6px; overflow-wrap: anywhere; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; padding-top: 22px; padding-bottom: 26px; color: #7b867e; font-size: .72rem; line-height: 1.6; }
+    @media (max-width: 800px) {
+      .wrap { width: min(100% - 40px, 680px); }
+      .header-inner { min-height: 72px; }
+      .nav { gap: 17px; }
+      .hero { grid-template-columns: minmax(0, 1fr) 230px; gap: 28px; padding-top: 66px; padding-bottom: 70px; }
+      .identity-card { min-height: 270px; padding: 22px; }
+      .identity-card::after { left: 22px; right: 22px; bottom: 84px; }
+      .card-monogram { margin-top: 42px; font-size: 4.3rem; }
+      .card-bottom { right: 22px; bottom: 22px; left: 22px; }
+      .section-layout { grid-template-columns: 165px minmax(0, 1fr); gap: 24px; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: calc(100% - 36px); }
+      .header-inner { align-items: start; flex-direction: column; gap: 15px; padding: 18px 0; }
+      .nav { width: 100%; justify-content: flex-start; gap: 20px; }
+      .nav a { font-size: .77rem; }
+      .nav .nav-contact { margin-left: auto; padding: 7px 10px; }
+      .hero { grid-template-columns: 1fr; gap: 38px; padding-top: 54px; padding-bottom: 55px; }
+      h1 { font-size: clamp(3.5rem, 15vw, 5rem); }
+      .hero-intro { font-size: 1.04rem; }
+      .identity-card { min-height: 240px; }
+      .card-monogram { margin-top: 31px; }
+      .section { padding-top: 45px; padding-bottom: 48px; }
+      .section-layout { grid-template-columns: 1fr; gap: 24px; }
+      .section-subtitle { max-width: none; }
+      .award { grid-template-columns: 45px 1fr; gap: 11px 14px; }
+      .award-prize { grid-column: 2; }
+      .education { grid-template-columns: 1fr; gap: 8px; }
+      .contact-inner { align-items: flex-start; flex-direction: column; gap: 20px; }
+      .footer-inner { flex-direction: column; gap: 4px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Ruofei Wang, back to top"><span class="brand-mark" aria-hidden="true">RW</span><span>Ruofei Wang</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#honors">Honors</a><a href="#education">Education</a><a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="wrap hero" aria-labelledby="name">
+      <div>
+        <p class="eyebrow">Academic profile · Zhengzhou, China</p>
+        <h1 id="name">Ruofei Wang</h1>
+        <p class="chinese-name" lang="zh-Hans">王若飞</p>
+        <p class="hero-intro">I am an undergraduate student in <strong>Software Engineering</strong> at <strong>Zhengzhou University</strong>.</p>
+        <p class="hero-detail">I study at the School of Computer Science and Artificial Intelligence and have participated in programming and artificial intelligence competitions.</p>
+        <div class="hero-links">
+          <a class="button button-primary" href="mailto:15837401356@163.com">Email me <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="button button-outline" href="#honors">View honors <span class="arrow" aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <aside class="identity-card" aria-label="University affiliation">
+        <div class="card-top"><span>Student profile</span><span>01 / ZZU</span></div>
+        <div class="card-monogram" aria-hidden="true">RW</div>
+        <div class="card-bottom"><div><strong>Zhengzhou University</strong><span>School of Computer Science<br>and Artificial Intelligence</span></div><span class="card-cross" aria-hidden="true">✳</span></div>
+      </aside>
+    </section>
+    <section class="section" id="honors" aria-labelledby="honors-heading">
+      <div class="wrap section-layout">
+        <div><p class="section-label">01 / Recognition</p><h2 id="honors-heading">Honors</h2><p class="section-subtitle">Selected competition awards.</p></div>
+        <ol class="award-list">
+          <li class="award"><span class="award-year">2026</span><div><span class="award-name">17th Lanqiao Cup</span><span class="award-desc">C/C++ Programming, University Group A · Henan provincial round</span></div><span class="award-prize">First prize</span></li>
+          <li class="award"><span class="award-year">2026</span><div><span class="award-name">28th China Robotics and Artificial Intelligence Competition</span><span class="award-desc">AI Innovation category · Henan provincial selection · Team award</span></div><span class="award-prize">Third prize</span></li>
+          <li class="award"><span class="award-year">2025</span><div><span class="award-name">College Student AI+ Innovation Application Competition</span><span class="award-desc">First edition · Henan · Team award</span></div><span class="award-prize">First prize</span></li>
+        </ol>
+      </div>
+    </section>
+    <section class="section" id="education" aria-labelledby="education-heading">
+      <div class="wrap section-layout">
+        <div><p class="section-label">02 / Background</p><h2 id="education-heading">Education</h2></div>
+        <div class="education"><div><h3>Zhengzhou University</h3><p>Undergraduate in Software Engineering</p><p>School of Computer Science and Artificial Intelligence</p></div><span class="education-year">2024 – Present</span></div>
+      </div>
+    </section>
+    <section class="contact-band" id="contact" aria-labelledby="contact-heading">
+      <div class="wrap contact-inner"><div><p class="contact-label">Get in touch</p><h2 id="contact-heading">Contact</h2></div><a class="contact-email" href="mailto:15837401356@163.com">15837401356@163.com <span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© Ruofei Wang · Zhengzhou University</span><span>Personal academic homepage</span></div></footer>
+</body>
+</html>
+
